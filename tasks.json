@@ -1,0 +1,62 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile and run",
+      "type": "shell",
+      "command": "",
+      "args": [
+        "copy",
+        "\"${file}\"",
+        "${workspaceFolder}\\testing.cpp",
+        "&&",
+        "g++",
+        "testing.cpp",
+        "-o",
+        "a.exe",
+        "&&",
+        "a.exe",
+        "<",
+        "input.txt",
+        ">",
+        "output.txt",
+        "&&",
+        "del",
+        "a.exe",
+        "&&",
+        "del",
+        "testing.cpp"
+      ],
+      "presentation": {
+        "reveal": "silent"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": [
+          "relative",
+          "${workspaceRoot}"
+        ],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      },
+      "options": {
+        "shell": {
+          "executable": "cmd.exe",
+          "args": [
+            "/c"
+          ]
+        }
+      }
+    }
+  ]
+}
