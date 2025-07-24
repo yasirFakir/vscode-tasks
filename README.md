@@ -1,4 +1,4 @@
-# vscode-tasks
+# vscode setup for competitive programming
 taks.json for competitive programming
 
 #setup process<br/>
